@@ -11,6 +11,7 @@ supabase/
   migrations/
     20261002000001_esquema_inicial.sql       # tablas, índices, RLS y datos iniciales
     20261003000002_admin_por_codigo_y_rpc.sql# código de admin (hash) y funciones RPC
+    20261003000003_fix_admin_activar_delete_con_where.sql# corrección: DELETE con WHERE (PostgREST)
   set_admin_code.example.sql                 # plantilla para definir el código de admin
 ```
 
@@ -40,7 +41,7 @@ supabase/
    La *publishable key* es pública por diseño; **nunca** pongas la `service_role` / secret key en el HTML.
 5. Publica `index.html` (Vercel, GitHub Pages, Netlify, o como archivo estático dentro del portal).
 
-> El proyecto actual (`hvydhrtaovnrdfsagyey`) ya tiene ambas migraciones aplicadas. No vuelvas a ejecutarlas ahí; los archivos son para reproducir el esquema en otro proyecto o ambiente.
+> El proyecto actual (`hvydhrtaovnrdfsagyey`) ya tiene las tres migraciones aplicadas. No vuelvas a ejecutarlas ahí; los archivos son para reproducir el esquema en otro proyecto o ambiente.
 
 ## Operación
 

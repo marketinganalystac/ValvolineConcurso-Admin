@@ -53,7 +53,7 @@ begin
     insert into public.admin_intentos default values;
     return null;
   end if;
-  delete from public.admin_intentos;
+  delete from public.admin_intentos where true;
   delete from public.admin_sesiones where expira < now();
   tok := encode(extensions.gen_random_bytes(32), 'hex');
   insert into public.admin_sesiones (token_hash, expira)
