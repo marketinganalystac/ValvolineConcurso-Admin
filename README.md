@@ -6,7 +6,8 @@ Lee y guarda sus datos en **Supabase**. No necesita build ni servidor propio.
 ## Contenido
 
 ```
-index.html                                   # el dashboard completo (HTML + CSS + JS)
+index.html                                   # el dashboard completo (HTML + CSS + JS; el logo va embebido)
+assets/logo.png                              # logo original de Auto Centro (copia de referencia)
 supabase/
   migrations/
     20261002000001_esquema_inicial.sql       # tablas, índices, RLS y datos iniciales
@@ -42,6 +43,12 @@ supabase/
 5. Publica `index.html` (Vercel, GitHub Pages, Netlify, o como archivo estático dentro del portal).
 
 > El proyecto actual (`hvydhrtaovnrdfsagyey`) ya tiene las tres migraciones aplicadas. No vuelvas a ejecutarlas ahí; los archivos son para reproducir el esquema en otro proyecto o ambiente.
+
+## Formato del CSV de ventas
+
+Columnas que usa el dashboard (el resto se ignora): `AñoMes` (ej. `2026-10`), `Cuenta` (id del cliente), `Nombre Cliente`, `Nombre Vendedor`, `Descripcion`, `Item Number`, `Cantidad` y `Venta`.
+Acepta codificación UTF-8 o ISO-8859-1 (se detecta sola). Sigue aceptándose el formato anterior (`Venta Por`, `ID`, `Empresa`, `Mes`, `Ventas`).
+Se ignoran las filas con cantidad ≤ 0 o venta negativa, y los vendedores que no estén en la lista del concurso.
 
 ## Operación
 
