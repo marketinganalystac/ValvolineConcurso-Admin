@@ -833,7 +833,7 @@ function fitRes(){var A=document.getElementById('app'),sc=A&&A.querySelector(':s
  if(!(A.classList.contains('tab-res')&&window.innerWidth>900&&window.innerHeight>620))return;
  var over=function(){return sc.scrollHeight>sc.clientHeight+1||sc.scrollWidth>sc.clientWidth+1};
  /* busca el mayor zoom (hasta 0.9) con el que la tabla cabe sin scroll */
- var lo=0.6,hi=10.0*Math.max(1,Math.min(1.7,window.innerWidth/1341)),z;
+ var lo=0.6,hi=0.85*Math.max(1,Math.min(1.7,window.innerWidth/1341)),z;
  t.style.zoom=hi;if(!over()){z=hi}else{
   for(var i=0;i<9;i++){var m=(lo+hi)/2;t.style.zoom=m.toFixed(3);if(over())hi=m;else lo=m}
   z=lo;t.style.zoom=z.toFixed(3);
